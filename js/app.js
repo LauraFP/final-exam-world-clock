@@ -1,5 +1,4 @@
 // Save 2 elements in variables we will use later:
-
 const main = document.getElementsByTagName("main")[0];
 const addButton = document.getElementById("addButton");
 
@@ -14,7 +13,7 @@ const cities = [
 
 // Create "add button" functionality:
 addButton.addEventListener("click", function () {
-  // With these 2 prompts we save a new city and hour difference in our precious array:
+  // With these 2 prompts we save a new city and hour difference in our previous array:
   var place = prompt("Write city name:");
   var hours = prompt("Hours difference?");
   cities.push({ place: place, diff: hours });
@@ -22,7 +21,7 @@ addButton.addEventListener("click", function () {
 
 // Function that creates new full timezone with details:
 function addTimezone(city) {
-  // Define the city hour taking into account the hour difference
+  // Define the city hour taking into account the hour difference of the city
   const date =
     city.diff > 0 ? new Date(Date.now() + city.diff * 3.6e6) : city.diff < 0 ? new Date(Date.now() - city.diff * 3.6e6) : new Date();
   // Create the new time zone div
